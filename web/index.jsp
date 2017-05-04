@@ -218,9 +218,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <!---->
         </div>
         <!-- Footer -->
         <footer>
@@ -229,14 +226,7 @@
                 <p>Terms of Services Applied</p>
             </div>
         </footer>    
-        <!--        <script type="text/javascript">
-                    $('.carousel').carousel({
-                        interval: 2000;
-                    });
-                    $('.carousel').carousel('cycle');
         
-                </script>-->
-
         <script type="text/javascript" src="assets/js/jquery.js"></script>
         <script type="text/javascript" src="assets/js/swiper.jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/bootstrap.js"></script>
