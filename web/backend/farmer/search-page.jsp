@@ -58,27 +58,7 @@
                 </div>
             </div>
         </c:forEach>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <article class="module width_quarter">
-                    <header><h4 style="padding-left: 5px;padding-top: 5px;">Twitter Feeds</h4></header>
-                    <div class="message_list">
-                        <div class="module_content">
-                            <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                                <p><strong>John Doe</strong></p></div>
-                            <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                                <p><strong>John Doe</strong></p></div>
-                            <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                                <p><strong>John Doe</strong></p></div>
-                            <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                                <p><strong>John Doe</strong></p></div>
-                            <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                                <p><strong>John Doe</strong></p></div>
-                        </div>
-                    </div>
-                </article><!-- end of messages article -->
-            </div>
-        </div>
+        
     </div>
     <!--<div class="col-md-1 clearfix"></div>-->
     <div class="col-md-9">

@@ -47,13 +47,13 @@
 
 <div class="row" style="background-color: #f9f9f9;font-family:'Oxygen-Regular';" >
     <div class="col-md-3">
-        <div class="well well-sm" style="margin-top: 50px;height: 250px;width: 200px;">
+        <div class="well well-sm" style="margin-top: 50px;height: 200px;width: 200px;">
             <p class="text-center" style="margin-top: 50px;">User Profile <br>Image</p>
         </div>
         <hr>
         <c:forEach var="user" items="${reqUsers.rows}">
 
-            <div class="panel panel-default">
+            <div class="panel panel-default" >
                 <div class="panel-body">
                     <header><h4 style="padding-left: 5px;padding-top: 5px;">${user.user_full_name}</h4></header>
                     <p style="margin-top: 20px;">(Only Visible to you)</p>
@@ -72,8 +72,6 @@
                 </div>
             </div>
         </c:forEach>
-
-
     </div>
     <div class="col-md-1 clearfix"></div>
 

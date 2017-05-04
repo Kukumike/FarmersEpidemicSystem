@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import sys.classes.DB_class;
 import sys.classes.Error_class;
-import sys.classes.Sign_class;
 import sys.classes.Success_class;
 
 /**

@@ -14,24 +14,24 @@
         <title>FEWS &CenterDot; FARMER DASHBOARD</title>
         <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="../../assets/css/main.css" rel="stylesheet" type="text/css"/>
-        
+
     </head>
     <body style="background-color: #f9f9f9;font-family:'Oxygen-Regular';" onload="notify();">
         <%
-            DB_class DB = new DB_class();
-        %>
+            //check if session is active
+            if (session.getAttribute("user") == null) {
+                response.sendRedirect("../Login.jsp");
+            }
 
-        <%
+            //databse object
+            DB_class DB = new DB_class();
+
             Login_class user = (Login_class) session.getAttribute("user");
             if (user == null) {
                 user = new Login_class();
             }
             String user_name = user.getUserEmail();
             int countNotification = DB.countNotifications(user_name);
-
-            if (session.getAttribute("user") == null) {
-                response.sendRedirect("../Login.jsp");
-            }
         %>
         <header>
             <!--navbar one-->
@@ -69,6 +69,7 @@
                 </div><!-- /.container-fluid -->
             </nav>
             <!--end navbar one-->
+            <!--nav two-->
             <div class="nav-two">
                 <div class="container">
                     <ul class="nav nav-tabs" role="tablist" id="myTab">
@@ -147,7 +148,7 @@
             $('#not').popover(options);
             $('#not').popover('show');
             $('#not').popover('toggle');
-            
+
             function notify() {
                 if (document.getElementById("not").value !== "0") {
                     document.getElementById("not").style.color = "#FF6666";
@@ -158,7 +159,7 @@
                 //check if account is confirmed
                 if (document.getElementById("acc").value === "0") {
                     document.getElementById("alert_status").style.display = "block";
-                } else if(document.getElementById("acc").value === "1") {
+                } else if (document.getElementById("acc").value === "1") {
                     document.getElementById("alert_status").style.display = "none";
                 }
             }

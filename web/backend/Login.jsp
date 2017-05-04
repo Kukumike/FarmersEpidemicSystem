@@ -27,6 +27,12 @@
             if (user_sucess == null) {
                 user_sucess = new Success_class();
             }
+            //check existing users
+            Cookie cookie = null;
+            Cookie[] cookies = null;
+            // Get an array of Cookies associated with this domain
+            cookies = request.getCookies();
+
         %>
         <nav class="navbar navbar-primary navbar-fixed-top" role="navigation">
             <div class="container">
@@ -65,6 +71,38 @@
                                 <input type="password" name="user-password" class="form-control" placeholder="Password" id="user-password" tabindex="2">
                             </div> <!-- /.form-group -->
                             <div class="form-group" >
+                                <label for="rememberme" style="margin-bottom: 40px;"><input type="checkbox" id="rememberme" name="rememberme" style="margin-right: 10px;" value="remeber">Remember me </label><span class="pull-right"><a href="Forget.jsp" class="btn" id="btn">Forgot Password ?</a></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-block btn-lg" tabindex="4">
+                                    Log In <span class="glyphicon glyphicon-log-in" style="margin-left: 10px;"></span></i>
+                                </button>
+                            </div> <!-- /.form-group -->
+                        </form>                    
+                        <p>Don't Have an account (FARMER) ? <a class="btn-sign1" id="btn"href="SignUp.jsp">Create an Account</a></p>
+                    </div>
+                </div>
+                <%
+                } else if (cookies != null) {
+                    for (int i = 0; i < cookies.length; i++) {
+                        cookie = cookies[i];
+System.out.println(cookie.getName());
+System.out.println(cookie.getValue());
+
+                %>       
+                <div class="panel panel-login">
+                    <div class="panel-body">
+                        <form class="form account-form" method="POST" action="<%=response.encodeUrl("Login")%>">
+                            <div class="form-group">
+                                <input type="hidden" value="<%=cookie.getName()%>"/>
+                                <input type="text" name="user-email" class="form-control" id="user-email" value="<%=cookie.getValue()%>" tabindex="1">
+                            </div> <!-- /.form-group -->
+
+                            <div class="form-group">
+                                <!--have a collapse panel with one email filed form for the forget pass-->
+                                <input type="password" name="user-password" class="form-control" value="<%=cookie.getValue()%>" id="user-password" tabindex="2">
+                            </div> <!-- /.form-group -->
+                            <div class="form-group" >
                                 <label for="rememberme" style="margin-bottom: 40px;"><input type="checkbox" id="rememberme" style="margin-right: 10px;" value="remeber">Remember me </label><span class="pull-right"><a href="Forget.jsp" class="btn" id="btn">Forgot Password ?</a></span>
                             </div>
                             <div class="form-group">
@@ -77,6 +115,7 @@
                     </div>
                 </div>
                 <%
+                    }
                 } else {
                 %>
                 <div class="panel panel-login">

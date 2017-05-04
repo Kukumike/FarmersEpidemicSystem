@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +23,7 @@ public class Login extends HttpServlet {
         //get params
         String useremail = request.getParameter("user-email");
         String userpass = request.getParameter("user-password");
+        String checkRemember = request.getParameter("rememberme");
 
         if (useremail.isEmpty() | userpass.isEmpty()) {
             String ErrorMessage = "/backend/Login.jsp";
@@ -37,6 +39,18 @@ public class Login extends HttpServlet {
             try {
                 db.newConn();
                 String pass = hp.hashPassword(userpass);
+                //setup cookie;one week age
+                if (checkRemember != null) {
+                    Cookie user_email = new Cookie("user_email", useremail);
+                    Cookie user_pass = new Cookie("user_pass", pass);
+                    // Set expiry date after 24 Hrs for both the cookies.
+                    user_email.setMaxAge(60 * 60 * 24 * 7);
+                    user_pass.setMaxAge(60 * 60 * 24 * 7);
+
+                    // Add both the cookies in the response header.
+                    response.addCookie(user_email);
+                    response.addCookie(user_pass);
+                }
                 int group_num = db.userLogin(useremail, pass);
                 switch (group_num) {
                     case 1: {

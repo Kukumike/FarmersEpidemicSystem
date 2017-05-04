@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="sys.classes.*" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,8 +16,17 @@
         <link href="../../assets/css/main.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <%@page import="sys.classes.*,sys.servlets.*" %>
         <%
+           
+            //create database object
+            DB_class DB = new DB_class();
+            Login_class user = (Login_class) session.getAttribute("user");
+            if (user == null) {
+                user = new Login_class();
+            }
+            String user_name = user.getUserEmail();
+            int countNotification = DB.countNotifications(user_name);
+ //check if session is active
             if (session.getAttribute("user") == null) {
                 response.sendRedirect("../Login.jsp");
             }
@@ -34,21 +45,29 @@
                         </button>
                         <a class="navbar-brand" href="../../index.jsp"><span style="color:#5cb85c;">FEWS</span> LOGO</a>
                     </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <div class="collapse navbar-collapse" id="">
                         <div class="dropdown navbar-right">
+                            <ul class="nav navbar-nav">
+                                <li class="" ><a href="#" class="popover-dismiss" id="not"><span style="padding-top: 5px;" class="glyphicon glyphicon-bell"><%=countNotification%></span></a></li>
+                            </ul>
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                Admin Action
+                                <%= user.getUserEmail()%>
                                 <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">PROFILE <span class="glyphicon glyphicon-user" style="margin-left: 20px;"></span></a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="Logout">LOGOUT <span class="glyphicon glyphicon-log-out" style="margin-left: 20px;"></span></a></li>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="AdminDash.jsp"><span class="glyphicon glyphicon-dashboard" style="margin-right: 20px;"></span>DASHBOARD</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="profile.jsp"><span class="glyphicon glyphicon-user" style="margin-right:  20px;"></span>PROFILE</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="../Message.jsp?user=<%= user.getUserEmail()%>"><span class="glyphicon glyphicon-envelope" style="margin-right: 20px;"></span>MESSAGES</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="Logout"><span class="glyphicon glyphicon-log-out" style="margin-right: 20px;"></span> LOGOUT</a></li>
                             </ul>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
             </nav>
             <!--end navbar one-->
+            <!--nav two-->
             <div class="nav-two">
                 <div class="container">
                     <ul class="nav nav-tabs" role="tablist" id="myTab">
@@ -78,7 +97,8 @@
         </header>
 
         <!--middle section-->
-        <div class="tab-content">
+        <div class="tab-content"style="background-color: #f9f9f9;font-family:'Oxygen-Regular';
+             ">
             <div class="tab-pane fade in active" id="main-page">
                 <div class="container">
                     <%@include  file="main-page.jsp" %>
@@ -108,8 +128,40 @@
         <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/javascript">
             $(function () {
-                $('#myTab a:last').tab('show')
-            })
+                $('#myTab a:first').tab('show');
+            });
+            function maxLength(el) {
+                if (!('maxLength' in el)) {
+                    var max = el.attributes.maxLength.value;
+                    el.onkeypress = function () {
+                        if (this.value.length >= max)
+                            return false;
+                    };
+                }
+            }
+
+            maxLength(document.getElementById("blog-content"));
+            $('.popover-dismiss').popover({
+                trigger: 'focus'
+            });
+            $('#not').popover(options);
+            $('#not').popover('show');
+            $('#not').popover('toggle');
+
+            function notify() {
+                if (document.getElementById("not").value !== "0") {
+                    document.getElementById("not").style.color = "#FF6666";
+                } else if (document.getElementById("not").value === "0") {
+                    document.getElementById("not").style.color = "yellow";
+                }
+
+                //check if account is confirmed
+                if (document.getElementById("acc").value === "0") {
+                    document.getElementById("alert_status").style.display = "block";
+                } else if (document.getElementById("acc").value === "1") {
+                    document.getElementById("alert_status").style.display = "none";
+                }
+            }
         </script>
         <script type="text/javascript" src="../../assets/js/jquery.js"></script>
         <script type="text/javascript" src="../../assets/js/bootstrap.js"></script>

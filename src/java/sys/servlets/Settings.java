@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -164,7 +165,24 @@ public class Settings extends HttpServlet {
             case "account_settings":
                 try {
                     db.deactivateAccount(userEmail);
-
+                    //delete cookies
+                    Cookie cookie = null;
+                    Cookie[] cookies = null;
+                    // Get an array of Cookies associated with this domain
+                    cookies = request.getCookies();
+                    if (cookies != null) {
+                        for (Cookie cookie1 : cookies) {
+                            cookie = cookie1;
+                            if ((cookie.getName()).compareTo("user_email") == 0) {
+                                cookie.setMaxAge(0);
+                                response.addCookie(cookie);
+                            }else if((cookie.getName()).compareTo("user_pass") == 0){
+                                cookie.setMaxAge(0);
+                                response.addCookie(cookie);
+                            }
+                        }
+                    }
+                    //remove session
                     HttpSession session = request.getSession();
                     session.removeAttribute("user");
                     session.invalidate();

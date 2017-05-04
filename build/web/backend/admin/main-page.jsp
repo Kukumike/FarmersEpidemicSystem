@@ -3,9 +3,30 @@
     Created on : Mar 31, 2017, 1:56:07 PM
     Author     : Michael Mukolwe
 --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>        
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<%@page import="sys.classes.*"%>
+<%
+    DB_class db = new DB_class();
 
-<div class="row" style="background-color: #f9f9f9;font-family:'Oxygen-Regular';
-     ">
+    Login_class user_ = (Login_class) session.getAttribute("user");
+    if (user_ == null) {
+        user_ = new Login_class();
+    }
+    String user_email = user_.getUserEmail();
+
+%>
+<sql:setDataSource var='bgGet' driver='<%= db.jstlDriver()%>' url='<%= db.jstlUrl()%>' user='<%= db.jstlUser()%>'  password='<%= db.jstlPassword()%>'/>
+
+<sql:query dataSource="${bgGet}" var="reqBlogs">
+    <%= db.blogsPosted()%>
+</sql:query>
+
+<sql:query dataSource="${bgGet}" var="reqUsers">
+    <%= db.user_Details(user_email)%>
+</sql:query>
+
+<div class="row" >
     <div class="col-md-9 ">
         <div class="" style="margin-top: 50px;">
             <div class="panel panel-default">
@@ -39,38 +60,23 @@
         <div class="main-content">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <header><h4 style="padding-top: 5px;">Latest Epidemic Post</h4></header>
-                    <p>
-                        Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation 
-                        +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table 
-                        craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco
-                        ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar 
-                        helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes 
-                        anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. 
-                        Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
-                        <a href="#" style="text-decoration: underline;">Read More</a>
-                    </p>
-                    <hr>
-                    <p>
-                        Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat 
-                        salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
-                        <a href="#" style="text-decoration: underline;">Read More</a>
-                    </p>
-                    <hr>
-                    <p>
-                        Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro 
-                        fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify
-                        pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica.
-                        <a href="#" style="text-decoration: underline;">Read More</a>
-                    </p>
-                    <hr>
-                    <p>
-                        DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg
-                        banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. 
-                        <a href="#" style="text-decoration: underline;">Read More</a>
-                    </p>
-                    <hr>
-                    <a href="" style="text-decoration: underline">View More</a>
+                    <header><h4 style="padding-top: 5px;margin-bottom: 20px;">Latest Epidemic Post</h4></header>
+                        <c:forEach var="blogs" items="${reqBlogs.rows}">
+                        <div class="">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object well well-sm" src="..." alt="epidemic photo" style="width: 80px;height: 100px;margin-right: 20px;">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><c:out value="${blogs.post_title}"/></h4>
+                                    <p><c:out value="${blogs.post_timestamp}"/></p>
+                                    <p><c:out value="${blogs.post_desc}"/> 
+                                        <a href="#">Read Profile</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </c:forEach>
                 </div>
             </div>
         </div>
@@ -85,36 +91,30 @@
         </ul>
     </div>
     <div class="col-md-3">
-        <div class="well well-sm" style="margin-top: 50px;height: 200px;width: 200px;border-radius: 400px; ">
+        <div class="well well-sm" style="margin-top: 50px;height: 200px;width: 200px;">
             <p class="text-center" style="margin-top: 50px;">User Profile <br>Image</p>
         </div>
         <hr>
-        <header><h4 style="padding-left: 5px;padding-top: 5px;">Organization Details</h4></header>
-        <div class="well well-sm">
-            <p>Name: .............</p>
-            <p>Contact:.............</p>
-            <p>About Us: .............</p>
-            <p>Location: .............</p>
-            <p><a href="#">View More / Edit</a></p>
-        </div>
-        <hr>
-        <article class="module width_quarter">
-            <header><h4 style="padding-left: 5px;padding-top: 5px;">Twitter Feeds</h4></header>
-            <div class="message_list">
-                <div class="module_content">
-                    <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                        <p><strong>John Doe</strong></p></div>
-                    <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                        <p><strong>John Doe</strong></p></div>
-                    <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                        <p><strong>John Doe</strong></p></div>
-                    <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                        <p><strong>John Doe</strong></p></div>
-                    <div class="message"><p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor.</p>
-                        <p><strong>John Doe</strong></p></div>
+        <c:forEach var="user" items="${reqUsers.rows}">
+
+            <div class="panel panel-default" >
+                <div class="panel-body">
+                    <header><h4 style="padding-left: 5px;padding-top: 5px;">${user.user_full_name}</h4></header>
+                    <p style="margin-top: 20px;">(Only Visible to you)</p>
+                    <p><span class="glyphicon glyphicon-phone"></span> : ${user.user_phone}</p>
+                    <p><span class="glyphicon glyphicon-envelope"></span> :${user.user_email}</p>
+                    <p>Joined on: ${user.user_timestamp}</p>
+                    <hr>
+
+                    <form action="" method="">
+                        <!--submit user id-->
+                        <div class="form-group">
+                            <a class="btn btn-primary" style="border-radius: 0px; width: 100%;"href="settings.jsp?user_email=${user.user_email}">EDIT PROFILE</a>
+                        </div>
+                    </form>
+
                 </div>
             </div>
-
-        </article><!-- end of messages article -->
+        </c:forEach>
     </div>
 </div>

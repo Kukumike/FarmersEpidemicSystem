@@ -277,11 +277,14 @@ footer a{
     margin-left: 350px;
 }
 /*end*/ 
+.panel-default{
+        background-color: #f9f9f9;
 
+}
 /*signup*/
 .panel-signup{
     width: 800px;
-    margin-left: 200px;
+    margin-left: 20px;
     background-color: #f9f9f9;
 }
 .panel-signup input{
