@@ -127,6 +127,7 @@ a #not:after{
 }
 .main-section{
     margin-bottom: 0px;
+    background: #f9f9f9;
 }
 
 /*--services--*/
@@ -150,17 +151,21 @@ a #not:after{
     color: #a3a3a3;
     font-size: 0.9em;
     line-height: 2em;
-    text-align:center;
+/*    text-align:center;*/
 
 }
 .services{
     padding: 1em 0 3em;
 }
 .service-top {
-    padding: 0em 0 4em;
+    padding: 0em 0 1em;
 }
-.ser-top{
+.ser-top-right{
     float:right;
+    width:77%;
+}
+.ser-top-left{
+    float:left;
     width:77%;
 }
 .ser-top h4{
@@ -169,11 +174,18 @@ a #not:after{
     font-family:'Oxygen-Regular';
     color:#5cb85c ;
 }
+.ser-top h5{
+    margin-top: 2em;
+    font-size: 1.0em;
+    text-transform: uppercase;
+    font-family:'Oxygen-Regular';
+    /*color:#5cb85c ;*/
+}
 .ser-top p{
     color:#a3a3a3;
     font-size: 0.9em;
     line-height:2em;
-    margin:0.5em 0 0em;
+    margin:0.1em 0 0em;
 }
 .ser-grid{
     float:left;
@@ -278,7 +290,7 @@ footer a{
 }
 /*end*/ 
 .panel-default{
-        background-color: #f9f9f9;
+    background-color: #f9f9f9;
 
 }
 /*signup*/
@@ -529,18 +541,12 @@ input[type=submit].btn_post_message:hover {
 }
 /*end*/
 /*swiper*/
-.swiper-container {
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.swiper-slide {
-    text-align: center;
+/*.swiper-slide {
+    text-align: left;
     font-size: 18px;
     background: #fff;
 
-    /* Center slide text vertically */
+     Center slide text vertically 
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -553,5 +559,40 @@ input[type=submit].btn_post_message:hover {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+}*/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    background: #fff;
 }
+.swiper-slide {
+    font-size: 18px;
+    color:#000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 100px 100px;
+}
+.parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+.swiper-slide .title {
+    font-size: 41px;
+    font-weight: 300;
+}
+.swiper-slide .subtitle {
+    font-size: 21px;
+}
+.swiper-slide .text {
+    font-size: 14px;
+    max-width: 400px;
+    line-height: 1.3;
+}
+
 /*end*/

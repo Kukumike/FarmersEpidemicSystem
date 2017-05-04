@@ -16,9 +16,9 @@
         <link href="assets/css/swiper.min.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
         <!-- Demo styles -->
-       
+
     </head>
     <body>
         <nav class="navbar navbar-primary navbar-fixed-top" role="navigation">
@@ -85,39 +85,73 @@
         <div class="main-section">
             <!-- Swiper -->
 
-            <div class="swiper-container" style="min-height: 400px;">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="assets/img/jumbo/12.JPG" alt="Slide 1" class="swiper-lazy">
+            <div class="swiper-container" style="min-height: 450px;color: black;">
+                <div class="swiper-wrapper" style="">
+                    <div class="swiper-slide" >
+                        <div class="title" >Slide 1</div>
+                        <div class="subtitle">Subtitle</div>
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. 
+                                Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem j
+                                usto. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. 
+                                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit.
+                                Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean 
+                                feugiat non eros quis feugiat.</p>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                        <img src="..." alt="Slide 2" class="swiper-lazy">
+                        <div class="title" >Slide 2</div>
+                        <div class="subtitle" >Subtitle</div>
+                        <div class="text" >
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec.
+                                Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem 
+                                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euis
+                                mod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamco
+                                rper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt u
+                                t libero. Aenean feugiat non eros quis feugiat.</p>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                        <img src="..." alt="Slide 3" class="swiper-lazy">
+                        <div class="title" >Slide 3</div>
+                        <div class="subtitle" >Subtitle</div>
+                        <div class="text" >
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dic
+                                tum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet
+                                justo vitae porttitor porttitor. Suspendisse in sem justo. Integer l
+                                aoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hend
+                                rerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla
+                                ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean f
+                                eugiat non eros quis feugiat.</p>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                        <img src="..." alt="Slide 4" class="swiper-lazy">
+                        <div class="title" >Slide 4</div>
+                        <div class="subtitle" >Subtitle</div>
+                        <div class="text" >
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictu
+                                m mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet j
+                                usto vitae porttitor porttitor. Suspendisse in sem justo. Integer laor
+                                eet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit 
+                                lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula ni
+                                si, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                        <img src="..." alt="Slide 5" class="swiper-lazy">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="..." alt="Slide 6" class="swiper-lazy">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="..." alt="Slide 7" class="swiper-lazy">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="..." alt="Slide 8" class="swiper-lazy">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="..." alt="Slide 9" class="swiper-lazy">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="..." alt="Slide 10" class="swiper-lazy">
+                        <div class="title" >Slide 5</div>
+                        <div class="subtitle" >Subtitle</div>
+                        <div class="text" >
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictu
+                                m mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo
+                                vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet mag
+                                na nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem 
+                                at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, im
+                                perdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+                        </div>
 
                     </div>
+
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -129,52 +163,59 @@
             <!--end jumbotron-->
 
             <!--service-->
-            <div class="services" id=services" style="margin-top: 20px;">
+            <div class="services" id=services" style="margin-top: 5px;">
                 <div class="container">
                     <div class="service-top">
                         <h3>How It Works</h3>
                     </div>
                     <div class="services-grid">
-                        <div class="col-md-6 service-top1">
-                            <div class=" ser-grid">	
-                                <a href="#" class="hi-icon hi-icon-archive glyphicon glyphicon-list" style="color:#48D1CC"> </a>
+                        <div class="row">
+                            <div class="col-md-5 service-top1" >
+                                <div  class="ser-top-right ser-top">
+                                    <h4>Farmers</h4>
+                                    <h5 style="">Create an account</h5>
+                                    <p class="help-block">
+                                        Farmers will be able to create an account
+                                        ,then login to access system resources.
+                                    </p>
+                                    <h5 style="">Report an epidemic</h5>
+                                    <p class="help-block">
+                                        Farmers make a report of epidemic they are
+                                        affected with; giving full description so that they may be helped.
+                                    </p>
+                                    <h5 style="">Get Notification</h5>
+                                    <p>
+                                        Farmers will get direct SMS notification of new Epidemic reports or Solutions to those they posted. 
+                                    </p>
+                                </div>
+                                <div class="clearfix"> </div>
                             </div>
-                            <div  class="ser-top">
-                                <h4>Farming Experts</h4>
-                                <p>
-                                    We provide you a variety of bus carriers to choose from.
-                                    If your preferred bus carrier isn't on this site, send them a
-                                    join wasafiri request.We provide you a variety of bus carriers to choose from.
-                                    If your preferred bus carrier isn't on this site, send them a
-                                    join wasafiri request.Book a bus anywhere, anytime with a 24/7 d
-                                    edicated help line to help you where stuck.
-
-                                </p>
+                            <div class="col-md-1 service-top1" style="margin-top: 50px;">	
+                                <img src="assets/img/steps-124c13915525542046e583ab8f0dd1bc.png" alt="" style="margin-left:20px;"/>
                             </div>
-                            <div class="clearfix"> </div>
+                            <div class="col-md-6 service-top1" style="padding-left: 20px;">
+                                <div  class="ser-top-left ser-top">
+                                    <h4>Farming Experts</h4>
+                                    <h5 style="">Obtain an account</h5>
+                                    <p class="help-block">
+                                        Experts will get an account from Admin; be able to access their
+                                        account with the credential they are given.
+                                    </p>
+                                    <h5 style="">Reply to an epidemic</h5>
+                                    <p class="help-block">
+                                        Experts will receive notification of epidemics / problems
+                                        the farmers have posted and reply to them.
+                                    </p>
+                                    <h5 style="">Write Epidemic Blog Post</h5>
+                                    <p>
+                                        Experts shall be able to write about Epidemics they have encountered and solutions
+                                        the farmers may want to use to protect their produce.
+                                    </p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 service-top1">
-                            <div class=" ser-grid">	
-                                <a href="#" class="hi-icon hi-icon-archive glyphicon glyphicon-usd" style="color:#696969"> </a>
-                            </div>
-                            <div  class="ser-top">
-                                <h4>Farmers</h4>
-                                <p>
-                                    The cost to convenience ratio is almost non-existent. 
-                                    Manage your entire booking online at almost no extra cost.
-                                    We are the only online portal offering you this service, no
-                                    compromises made, we give you 100%.The cost to convenience ratio is almost non-existent. 
-                                    Manage your entire booking online at almost no extra cost.
-                                    We are the only online portal offering you this service, no
-                                    compromises made, we give you 100%.
-
-                                </p>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="clearfix"> </div>
                     </div>
-
                 </div>
             </div>
 
@@ -209,8 +250,9 @@
                 prevButton: '.swiper-button-prev',
                 loop: true,
                 grabCursor: true,
-                autoplay: 3500,
+                autoplay: 5000,
                 autoplayDisableOnInteraction: false
+
             });
 
         </script>
