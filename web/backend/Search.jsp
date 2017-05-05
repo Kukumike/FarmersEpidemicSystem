@@ -15,9 +15,10 @@
 
         <!--css links-->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../assets/css/swiper.min.css" rel="stylesheet" type="text/css"/>
         <link href="../assets/css/main.css" rel="stylesheet" type="text/css"/>
-        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon">
     </head>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
@@ -124,14 +125,14 @@
                     <hr>
                     <div class="panel">
                         <div class="">
-                            <p class="panel-title" style="font-size: 15px;padding-left: 15px;"><%=DB.searchZero(search_filter)%> articles found...</p>
+                            <p class="panel-title" style="font-size: 15px;padding-left: 15px;"><%=DB.searchZero(search_filter)%> articles found </p>
                         </div>
                         <hr>
                         <div class="panel-body">
                             <%
                                 if (request.getAttribute("search_filter") == null | DB.searchZero(search_filter)== 0) {
                             %>
-                            <div class="alert alert-info" role="alert">zero search result</div>
+                            <div class="alert alert-info" role="alert">zero search result on the topic...<span><a href="http://www.google.com/" target="_blank"> try google.com</a></span> </div>
                             <%
                             } else {
                             %>

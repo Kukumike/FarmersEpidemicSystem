@@ -43,6 +43,7 @@
             <word>Admin</word>
             <word>Blog</word>
             <word>Blogs</word>
+            <word>GOOGLE</word>
             <word>Speciality</word>
         </spellchecker-wordlist>
     </configuration>

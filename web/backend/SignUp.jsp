@@ -9,10 +9,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Farmers Epidemic System Sign Up</title>
+        <!--css links-->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="../assets/css/main.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon"/>
+
         <script language="javascript" type="text/javascript">
-            
+
             function checkLength() {
                 //password length
                 if ((document.getElementById('user-password').value).length < 6) {
@@ -120,7 +124,6 @@
                 </div>
             </div>
         </div>
-
         <!--end form-->
 
         <!-- Footer -->
@@ -130,6 +133,7 @@
                 <p>Terms of Services Applied</p>
             </div>
         </footer>
+        
         <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
         <script type="text/javascript" src="../assets/js/jquery.js"></script>
     </body>

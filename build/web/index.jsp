@@ -38,9 +38,6 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a class="page-scroll" href="#services">HOW IT WORKS</a>
-                        </li>
-                        <li>
                             <a class="page-scroll" href="backend/Search.jsp">SEARCH EPIDEMICS</a>
                         </li>
                         <li class="hidden">
@@ -87,71 +84,39 @@
 
             <div class="swiper-container" style="min-height: 450px;color: black;">
                 <div class="swiper-wrapper" style="">
+                    <div class="swiper-slide">
+                        <div class="title" >Welcome Farmer</div>
+                        <div class="text" >
+                            <p>Farmers get to connect with other farmers in same area at once with 
+                                a broadcast warning on signs of disease or epidemic affecting their crops.Get advice from experts or
+                                other farmers on what to do...</p>
+                        </div>
+                    </div>
                     <div class="swiper-slide" >
-                        <div class="title" >Slide 1</div>
-                        <div class="subtitle">Subtitle</div>
+                        <div class="title" >Welcome Expert</div>
                         <div class="text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. 
-                                Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem j
-                                usto. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. 
-                                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit.
-                                Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean 
-                                feugiat non eros quis feugiat.</p>
+                            <p>Experts of Organization are able to reach Organization farmers at large once and 
+                                help them by giving them advice on what to do in certain situation that arise;also write
+                                about past epidemics that may arise and tell farmers on ways to help them...</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="title" >Slide 2</div>
-                        <div class="subtitle" >Subtitle</div>
+                        <div class="title" >Get SMS Notification</div>
                         <div class="text" >
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec.
-                                Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem 
-                                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euis
-                                mod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamco
-                                rper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt u
-                                t libero. Aenean feugiat non eros quis feugiat.</p>
+                            <p>The farmers and experts will get epidemic alerts in form of messages telling
+                                them of reports made in their area about certain epidemics they need to watch out for.
+                                Also get alerts if their posted epidemic has been replied to by any expert or farmer...</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="title" >Slide 3</div>
-                        <div class="subtitle" >Subtitle</div>
+                        <div class="title" >Mapping User Location</div>
                         <div class="text" >
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dic
-                                tum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet
-                                justo vitae porttitor porttitor. Suspendisse in sem justo. Integer l
-                                aoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hend
-                                rerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla
-                                ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean f
-                                eugiat non eros quis feugiat.</p>
+                            <p>The web-system shall be able to get user location information
+                                (with consent) and map it to our database for reference. Helps the 
+                                system to know areas affected so as to help experts determine the 
+                                epidemic spread pattern, origin etc....</p>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="title" >Slide 4</div>
-                        <div class="subtitle" >Subtitle</div>
-                        <div class="text" >
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictu
-                                m mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet j
-                                usto vitae porttitor porttitor. Suspendisse in sem justo. Integer laor
-                                eet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit 
-                                lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula ni
-                                si, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="title" >Slide 5</div>
-                        <div class="subtitle" >Subtitle</div>
-                        <div class="text" >
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictu
-                                m mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo
-                                vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet mag
-                                na nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem 
-                                at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, im
-                                perdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
-                        </div>
-
-                    </div>
-
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -183,7 +148,7 @@
                                         Farmers make a report of epidemic they are
                                         affected with; giving full description so that they may be helped.
                                     </p>
-                                    <h5 style="">Get Notification</h5>
+                                    <h5 style="">Get a sms Notification</h5>
                                     <p>
                                         Farmers will get direct SMS notification of new Epidemic reports or Solutions to those they posted. 
                                     </p>
@@ -218,9 +183,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <!---->
         </div>
         <!-- Footer -->
         <footer>
@@ -229,13 +191,6 @@
                 <p>Terms of Services Applied</p>
             </div>
         </footer>    
-        <!--        <script type="text/javascript">
-                    $('.carousel').carousel({
-                        interval: 2000;
-                    });
-                    $('.carousel').carousel('cycle');
-        
-                </script>-->
 
         <script type="text/javascript" src="assets/js/jquery.js"></script>
         <script type="text/javascript" src="assets/js/swiper.jquery.min.js"></script>
